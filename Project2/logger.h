@@ -1,9 +1,10 @@
 
 
-#ifndef _WIN64
-#define _LOCALTIME localtime_s(&curtime, &t)
+#if _WIN64
+#define _LOCALTIME(curtime,t) (localtime_s(&curtime, &t))
 #else
-#define _LOCALTIME localtime(&t)
+#include <stddef.h>
+#define _LOCALTIME(curtime,t) (curtime=*localtime(&t))
 #endif
 
 #ifndef LOGGER
@@ -55,7 +56,7 @@ private:
 		//section gets time for file name
 		time_t t = std::time(nullptr);
 		tm curtime;
-		_LOCALTIME;
+		_LOCALTIME(curtime,t);
 		//setting name
 		std::stringstream logstring;
 		logstring << std::put_time(&curtime, "%Y_%m_%d_%H%M%S") << ".txt";
