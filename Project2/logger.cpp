@@ -111,7 +111,7 @@ bool logger::log_close()
 				sstr = "File name = " + get_filename();
 				log(sstr);
 				sstr = "Logger Type = " + LoggerName[get_LoggerType()];
-				log(get_LoggerType());
+				log(sstr);
 
 				sstr = "------------------------";
 				log(sstr);
