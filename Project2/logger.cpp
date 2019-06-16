@@ -67,7 +67,7 @@ bool logger::log_open()
 		{
 			isopen = true; //Currently logging
 			//creating file handler
-			mylogger.open(filename.c_str(), std::ofstream::out | std::ofstream::app);
+			mylogger.open((std::string)(directory + filename).c_str(), std::ofstream::out | std::ofstream::app);
 			if (get_LoggerType() == PRODUCTION_MODE)
 			{
 				std::string sstr;
