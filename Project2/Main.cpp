@@ -11,10 +11,11 @@ int main()
 
 	mylog->set_mode(PRODUCTION_MODE);
 	mylog->log_open();
+	err_str = "This is a test run";
+	mylog->log(err_str);
 
-	mylog->log("This is a test run");
-
-	mylog->log("Entering for loop.");
+	err_str= "Entering for loop. ";
+	mylog->log(err_str);
 	for (int i = 0, j = 10; i < 10; i++, j--)
 	{
 		err_str = "Entered for loop: counter : " + std::to_string(i);
