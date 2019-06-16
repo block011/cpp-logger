@@ -44,7 +44,9 @@ private:
 	logger()
 	{
 		//setting defaults
-		set_directory("./");
+
+		std::string str = "./";
+		set_directory(str);
 		set_mode(PRODUCTION_MODE);
 
 		mtx.lock(); //critical area

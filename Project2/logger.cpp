@@ -70,13 +70,16 @@ bool logger::log_open()
 			if (get_LoggerType() == PRODUCTION_MODE)
 			{
 				std::string sstr;
-				log("Successfully opened log");
-				log("log values -------------");
+				sstr = "Successfully opend log";
+				log(sstr);
+				sstr = "log values -------------";
+				log(sstr);
 				sstr = "File name = " + get_filename();
 				log(sstr);
 				sstr = "Logger Type = " + LoggerName[get_LoggerType()];
 				log(sstr);
-				log("------------------------");
+				sstr = "------------------------";
+				log(sstr);
 			}
 
 		}
@@ -99,13 +102,18 @@ bool logger::log_close()
 			if (get_LoggerType() == PRODUCTION_MODE)
 			{
 				std::string sstr;
-				log("Attempting to close log");
-				log("log values -------------");
+				sstr = "Attempting to close log";
+				log(sstr);
+				sstr = "log values -------------";
+				log(sstr);
+
 				sstr = "File name = " + get_filename();
 				log(sstr);
 				sstr = "Logger Type = " + LoggerName[get_LoggerType()];
 				log(get_LoggerType());
-				log("------------------------");
+
+				sstr = "------------------------";
+				log(sstr);
 			}
 			move();
 			isopen = false;
