@@ -1,8 +1,8 @@
 
 
-#if _WIN64
+#if defined(_WIN32)
 #define _LOCALTIME(curtime,t) (localtime_s(&curtime, &t))
-#else
+#elif defined(__linux__)
 #include <stddef.h>
 #define _LOCALTIME(curtime,t) (curtime=*localtime(&t))
 #endif
