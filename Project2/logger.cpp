@@ -18,6 +18,7 @@ logger::~logger()
 	{
 		log_close();
 	}
+	delete p_Instance;
 
 }
 
